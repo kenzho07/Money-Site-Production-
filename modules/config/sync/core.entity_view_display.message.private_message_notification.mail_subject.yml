@@ -1,0 +1,23 @@
+uuid: 2c8d2178-a864-4327-98d0-8924e3562c03
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.message.mail_subject
+    - field.field.message.private_message_notification.field_message_private_message
+    - message.template.private_message_notification
+_core:
+  default_config_hash: wnjKbEVFypVwQ3dhv3vS5fccO-nmPwGZ1mYzjb7BuNo
+id: message.private_message_notification.mail_subject
+targetEntityType: message
+bundle: private_message_notification
+mode: mail_subject
+content:
+  partial_0:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_message_private_message: true
+  partial_1: true

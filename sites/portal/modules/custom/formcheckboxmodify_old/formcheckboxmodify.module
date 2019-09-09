@@ -1,0 +1,37 @@
+<?php
+/* node_site_posts_form  */
+use Drupal\Core\Form\FormStateInterface;
+
+
+	  function formcheckboxmodify_form_alter(&$form, FormStateInterface $form_state, $form_id)
+	{
+		//dpm($form['linkit_editor_dialog_forms']['widget']['0']['basic']['checkbox']['#default_value'] = TRUE);
+
+		if($form_id === 'node_site_posts_form' )
+				{
+				$form['node_site_posts_form']['#default_value'] = checkboxtrue_callback($form);
+				}
+    //dpm($form);
+	}
+		function checkboxtrue_callback($form){
+			$checkbox_value = TRUE ;
+			$form['linkit_editor_dialog_form']['widget']['0']['basic']['checkbox']['#default_value'] = $checkbox_value ;
+			return $form ;
+		}
+
+/*function formcheckboxmodify_element_info_alter(&$type) {
+  if (isset($type['checkbox'])) {
+    $type['checkbox']['#default_value'][] = 'formcheckboxmodify_link_field_process';
+  }
+}
+
+function formcheckboxmodify_link_field_process($element, $form_state, $complete_form) {
+  if (isset($element['#field_name'])) {
+    switch ($element['#field_name']) {
+      case 'field_s_my_link':
+        $element['checkbox']['#default_value'] = TRUE;
+        break;
+    }
+  }
+  return $element;
+} */

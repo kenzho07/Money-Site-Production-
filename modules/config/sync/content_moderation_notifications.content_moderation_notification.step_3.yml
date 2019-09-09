@@ -1,0 +1,18 @@
+uuid: 6499824f-da8a-4b80-8ad7-1e39c97a0058
+langcode: en
+status: true
+dependencies: {  }
+id: step_3
+workflow: editorial
+transitions:
+  archived_published: archived_published
+roles:
+  administrator: administrator
+  team_leader: team_leader
+author: true
+emails: ''
+subject: 'CMS Portal - Content has been Published'
+body:
+  value: "<p>Hi,</p>\r\n\r\n<p>The submitted content has been Approved and Published.</p>\r\n\r\n<p>- CMS Portal</p>\r\n"
+  format: full_html
+label: 'Step 3'

@@ -1,0 +1,10 @@
+uuid: 7b0fea2e-723f-4b2d-bb93-26fd9cdf98c3
+langcode: en
+status: true
+dependencies: {  }
+id: sub_editor
+label: Sub-Editor
+weight: 5
+is_admin: null
+permissions:
+  - 'use text format full_html'

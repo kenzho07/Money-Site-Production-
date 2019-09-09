@@ -1,0 +1,27 @@
+diff --git a/js/private_message_members_widget.js b/js/private_message_members_widget.js
+index 6b5b4bb..a97371c 100644
+--- a/js/private_message_members_widget.js
++++ b/js/private_message_members_widget.js
+@@ -196,8 +196,12 @@
+       i = 1;
+       $.each(autocompleteUsernames[string], function (uid) {
+         var username = autocompleteUsernames[string][uid].username;
++        var firstname = autocompleteUsernames[string][uid].firstname;
++        var lastname = autocompleteUsernames[string][uid].lastname;
++        
++        var fullDisplayName = username + " - " + firstname + " " + lastname;
+         if (!insertedUsernames[username]) {
+-          $("<li/>", {class:"ui-menu-item"}).append($("<a/>", {class:"pm-autocomplete-search-result", "data-username":username, tabindex:i}).text(username)).appendTo(list);
++          $("<li/>", {class:"ui-menu-item"}).append($("<a/>", {class:"pm-autocomplete-search-result", "data-username":username, tabindex:i}).text(fullDisplayName)).appendTo(list);
+           i += 1;
+         }
+       });
+@@ -500,7 +504,7 @@
+         ajax = ajax;
+ 
+         autocompleteUsernames[response.string] = response.userInfo;
+-
++        
+         showAutocompleteResults(response.string);
+       };
+ 

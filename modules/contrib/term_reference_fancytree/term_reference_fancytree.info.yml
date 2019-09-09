@@ -1,0 +1,10 @@
+name: 'Term Reference Fancytree'
+type: module
+description: 'Provides a tree like widget for term reference fields using the Fancytree plugin.'
+# core: 8.x
+
+# Information added by Drupal.org packaging script on 2019-08-15
+version: '8.x-1.0-rc7'
+core: '8.x'
+project: 'term_reference_fancytree'
+datestamp: 1565858292

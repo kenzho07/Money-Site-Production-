@@ -1,0 +1,74 @@
+uuid: e831b20c-5d50-4423-b3a3-390d207fab5e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.backlinks_related_articles.body
+    - field.field.node.backlinks_related_articles.field_author
+    - field.field.node.backlinks_related_articles.field_content_created
+    - field.field.node.backlinks_related_articles.field_feature_image_link
+    - field.field.node.backlinks_related_articles.field_status
+    - field.field.node.backlinks_related_articles.field_url_of_the_backlinks
+    - node.type.backlinks_related_articles
+  module:
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: false
+    custom: false
+    allow: false
+    default: default
+id: node.backlinks_related_articles.default
+targetEntityType: node
+bundle: backlinks_related_articles
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_author:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_content_created:
+    weight: 5
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_feature_image_link:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_status:
+    weight: 3
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_url_of_the_backlinks:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+hidden:
+  links: true

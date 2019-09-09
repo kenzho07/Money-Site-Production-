@@ -1,0 +1,9 @@
+social_auth_google.callback:
+  path: 'user/login/google/callback'
+  defaults:
+    _controller: '\Drupal\customiepl_socialsso\Controller\CustomAuthController::custom_callback'
+  requirements:
+    # Anonymous users can log in, but authenticated users can also associate a new provider.
+    _access: 'TRUE'
+  options:
+    no_cache: TRUE

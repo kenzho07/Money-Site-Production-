@@ -1,0 +1,6 @@
+name: keywoard_auto
+type: module
+description: 'keywoard_auto'
+package: Custom
+version: 8.x
+core: 8.x

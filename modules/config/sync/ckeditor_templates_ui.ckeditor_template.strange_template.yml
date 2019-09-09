@@ -1,0 +1,12 @@
+uuid: bab238ed-3c4e-4bc1-9208-d21c56e79766
+langcode: en
+status: true
+dependencies: {  }
+id: strange_template
+label: 'Strange Template'
+image: 'public://ckeditor-templates/template2.gif'
+description: 'A template that defines two columns, each one with a title, and some text.'
+html:
+  value: "<table>\r\n\t<thead>\r\n\t\t<tr>\r\n\t\t\t<th scope=\"col\">Title 1</th>\r\n\t\t\t<th scope=\"col\">&nbsp;</th>\r\n\t\t\t<th scope=\"col\">Title 2</th>\r\n\t\t</tr>\r\n\t</thead>\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<td>Text 1</td>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t\t<td>Text 2</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>\r\n\r\n<p>More text goes here.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Viverra ipsum nunc aliquet bibendum enim facilisis gravida neque convallis. Tempus quam pellentesque nec nam aliquam sem et. Arcu non odio euismod lacinia at. Scelerisque in dictum non consectetur a. Diam sit amet nisl suscipit adipiscing. Tristique senectus et netus et malesuada. Nisl tincidunt eget nullam non. Imperdiet dui accumsan sit amet nulla facilisi. Vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi tristique. Nisi scelerisque eu ultrices vitae auctor eu augue ut lectus. Egestas dui id ornare arcu. Nullam non nisi est sit. Eget egestas purus viverra accumsan in nisl.</p>\r\n"
+  format: full_html
+weight: 1

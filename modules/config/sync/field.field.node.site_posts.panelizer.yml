@@ -1,0 +1,33 @@
+uuid: 2c086117-dbc6-4afb-885f-7e496b8a18ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.panelizer
+    - node.type.site_posts
+  module:
+    - panelizer
+id: node.site_posts.panelizer
+field_name: panelizer
+entity_type: node
+bundle: site_posts
+label: Panelizer
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    panels_display: null
+    default: __bundle_default__
+    view_mode: ''
+  -
+    panels_display: {  }
+    default: default
+    view_mode: default
+  -
+    panels_display: {  }
+    default: default
+    view_mode: full
+default_value_callback: ''
+settings: {  }
+field_type: panelizer

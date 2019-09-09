@@ -1,0 +1,7 @@
+entity_type_groups:
+  node:
+    site_posts:
+      basic: basic
+  taxonomy_term:
+    robots_categories:
+      basic: basic

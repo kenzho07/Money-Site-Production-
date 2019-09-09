@@ -1,0 +1,14 @@
+name: Social Auth Slack
+type: module
+description: 'Social Auth integration for Slack.'
+package: Social
+# core: 8.x
+configure: social_auth_slack.settings_form
+dependencies:
+  - social_auth:social_auth
+
+# Information added by Drupal.org packaging script on 2019-06-20
+version: '8.x-2.0-beta2'
+core: '8.x'
+project: 'social_auth_slack'
+datestamp: 1561005787

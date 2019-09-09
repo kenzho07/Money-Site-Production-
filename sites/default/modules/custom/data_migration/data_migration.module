@@ -1,0 +1,39 @@
+<?php
+
+use Drupal\data_migration\Controller\DataMigrationController;
+
+/**
+ * Implements hook_cron().
+ **/
+function data_migration_cron()
+{
+  // We access our configuration.
+  $cron_config = \Drupal::configFactory()->getEditable('data_migration.settings');
+
+  $interval = $cron_config->get('run_interval');
+  $interval = $interval ?? 180;
+
+  $next_execution = \Drupal::state()->get('data_migration.next_execution', 0);
+
+  if (REQUEST_TIME >= $next_execution) {
+
+    $dataMigration = new DataMigrationController();
+    $result = $dataMigration->migrateData();
+
+    if (! $result ) {
+      \Drupal::logger('data_migration')->notice('data_migration failed');
+    } else {
+      \Drupal::logger('data_migration')->notice('data_migration ran');
+    }
+
+    if (\Drupal::state()->get('data_migration_show_status_message')) {
+      \Drupal::messenger()->addMessage(t('data_migration executed at %time', [
+          '%time' => date('c'),
+        ]));
+      \Drupal::state()->set('data_migration_show_status_message', FALSE);
+    }
+
+    \Drupal::state()->set('data_migration.next_execution', REQUEST_TIME + $interval);
+  }
+
+}

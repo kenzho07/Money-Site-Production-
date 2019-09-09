@@ -1,0 +1,14 @@
+posts_url: 'http://localhost/touristsecrets/?rest_route=/moneysite-plugins/v1/moneysite/post'
+update_url: 'http://localhost/touristsecrets/?rest_route=/moneysite-plugins/v1/moneysite/update/post'
+taxonomy_url: 'http://localhost/touristsecrets/?rest_route=/moneysite-plugins/v1/moneysite/taxonomy'
+run_interval: 300
+default_uid: 89
+mappings:
+  touristsecrets:
+    post_content: 'content'
+    post_name: 'name'
+    post_title: 'title'
+    post_status: 'status'
+    guid: 'url'
+    vid: 'ID'
+    meta: 'meta'

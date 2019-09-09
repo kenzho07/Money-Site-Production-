@@ -1,0 +1,16 @@
+uuid: 9b716739-af9d-4efb-80e1-8c0389199895
+langcode: en
+status: true
+dependencies: {  }
+id: step_2
+workflow: editorial
+transitions:
+  archived_draft: archived_draft
+roles: {  }
+author: true
+emails: ''
+subject: 'CMS Portal - Restored to Draft'
+body:
+  value: "<p>Hi,</p>\r\n\r\n<p>Your content has been&nbsp;Restore to Draft and need some update.<br />\r\nPlease check with your Team Leader and Log in to the portal for review.</p>\r\n\r\n<p>- CMS Portal</p>\r\n"
+  format: full_html
+label: 'Step 2'

@@ -1,0 +1,4 @@
+services:
+  data_migration:
+    class: DataMigration\DataMigrationController
+    arguments: []

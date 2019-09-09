@@ -1,0 +1,17 @@
+uuid: 6e732c22-88b9-4d2b-bdff-f8f541d76891
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Site Posts'
+type: site_posts
+description: 'For all content, posts and articles / verticals'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

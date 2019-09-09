@@ -1,0 +1,50 @@
+uuid: 26c0489a-52db-4b20-b825-efc7d496f8ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.private_message
+  module:
+    - panels
+    - private_message
+id: private_message-panels_variant-0
+label: Panels
+variant: panels_variant
+variant_settings:
+  blocks:
+    78f9bf2a-6baf-4c4b-99fd-e84abc0b43c0:
+      id: private_message_actions_block
+      label: 'Private Message Actions'
+      provider: private_message
+      label_display: visible
+      region: first
+      weight: 0
+      uuid: 78f9bf2a-6baf-4c4b-99fd-e84abc0b43c0
+      context_mapping: {  }
+    806dd52c-9610-47d2-99d8-501a5a8398f2:
+      id: private_message_inbox_block
+      label: 'Private Message Inbox'
+      provider: private_message
+      label_display: visible
+      thread_count: 5
+      ajax_load_count: 5
+      ajax_refresh_rate: 15
+      region: second
+      weight: 0
+      uuid: 806dd52c-9610-47d2-99d8-501a5a8398f2
+      context_mapping: {  }
+  id: panels_variant
+  uuid: 5407fe72-27ef-4114-b0e9-bba655e13fa2
+  label: null
+  weight: 0
+  layout: layout_twocol
+  layout_settings: {  }
+  page_title: ''
+  storage_type: page_manager
+  storage_id: private_message-panels_variant-0
+  builder: ipe
+page: private_message
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

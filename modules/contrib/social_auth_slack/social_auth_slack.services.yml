@@ -1,0 +1,6 @@
+services:
+  social_auth_slack.manager:
+    class: Drupal\social_auth_slack\SlackAuthManager
+    arguments:
+      - '@config.factory'
+      - '@logger.factory'

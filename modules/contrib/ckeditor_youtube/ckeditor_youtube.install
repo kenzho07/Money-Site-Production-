@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the ckeditor_youtube module.
+ */
+
+/**
+ * Add the CKEditor Youtube default configuration.
+ */
+function ckeditor_youtube_update_8001() {
+  $config_factory = \Drupal::configFactory();
+  $config = $config_factory->getEditable('ckeditor_youtube.settings');
+  $config->set('library_path', 'libraries/youtube');
+  $config->save(TRUE);
+}

@@ -1,0 +1,6 @@
+name: Adjustment for private message
+type: module
+description: 'Adjustment for private message'
+package: Custom
+version: 8.x
+core: 8.x

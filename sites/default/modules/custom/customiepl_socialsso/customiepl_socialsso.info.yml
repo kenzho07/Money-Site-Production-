@@ -1,0 +1,7 @@
+name: 'Custom IEPL SocialSSO'
+type: module
+description: 'Custom module to modify Social SSO Authentication'
+package: Custom
+dependencies:
+  - social_auth
+core: 8.x

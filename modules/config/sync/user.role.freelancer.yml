@@ -1,0 +1,10 @@
+uuid: 7188a1ed-9f2d-4413-858f-27be423ee2f8
+langcode: en
+status: true
+dependencies: {  }
+id: freelancer
+label: Freelancer
+weight: 6
+is_admin: null
+permissions:
+  - 'use text format full_html'

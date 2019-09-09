@@ -1,0 +1,34 @@
+uuid: 8008cbbf-3ebf-486f-9b1c-a5aef86e9742
+langcode: en
+status: true
+dependencies:
+  module:
+    - social_auth
+    - system
+    - user
+  theme:
+    - bartik
+id: socialauthlogin
+theme: bartik
+region: content
+weight: -2
+provider: null
+plugin: social_auth_login
+settings:
+  id: social_auth_login
+  label: 'or Use Single Sign-On Login'
+  provider: social_auth
+  label_display: visible
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      anonymous: anonymous
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+  request_path:
+    id: request_path
+    pages: /user/login
+    negate: false
+    context_mapping: {  }

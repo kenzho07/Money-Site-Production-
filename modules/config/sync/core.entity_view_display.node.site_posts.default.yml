@@ -1,0 +1,165 @@
+uuid: 22758e2d-d2c1-4046-a2cd-9e0adf0cb23e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.comment.default
+    - field.field.node.site_posts.body
+    - field.field.node.site_posts.field_all_categories
+    - field.field.node.site_posts.field_comments
+    - field.field.node.site_posts.field_featured_image
+    - field.field.node.site_posts.field_meta_tags
+    - field.field.node.site_posts.field_primary_category
+    - field.field.node.site_posts.field_tag
+    - field.field.node.site_posts.panelizer
+    - node.type.site_posts
+  module:
+    - comment
+    - image
+    - metatag
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: true
+    custom: true
+    allow: true
+    default: default
+    displays:
+      default:
+        blocks:
+          690fa017-6392-4c6f-9317-29e3168171c8:
+            id: 'entity_field:node:body'
+            label: Body
+            provider: ctools_block
+            label_display: '0'
+            formatter:
+              label: hidden
+              type: text_default
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+              region: content
+            region: middle
+            weight: 101
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+            uuid: 690fa017-6392-4c6f-9317-29e3168171c8
+        id: panels_variant
+        label: Default
+        uuid: 8e4c2d9f-c106-461d-99fc-46bd95253dcc
+        weight: 0
+        layout: layout_twocol_bricks
+        layout_settings: {  }
+        page_title: '[node:title]'
+        storage_type: panelizer_default
+        storage_id: 'node:site_posts:default:default'
+        builder: ipe
+        pattern: panelizer
+        static_context: {  }
+      test_panelizer:
+        blocks:
+          ad839b31-42ba-4cb9-859d-94d334cd8520:
+            id: 'entity_field:node:body'
+            label: Body
+            provider: ctools_block
+            label_display: visible
+            formatter:
+              label: above
+              type: text_default
+              settings: {  }
+              third_party_settings: {  }
+              weight: 0
+            region: top
+            weight: 0
+            uuid: ad839b31-42ba-4cb9-859d-94d334cd8520
+            context_mapping:
+              entity: '@panelizer.entity_context:entity'
+        id: panels_variant
+        uuid: cf8de966-9f32-48b7-b981-8c84988df5ee
+        label: 'Test Panelizer'
+        weight: 0
+        layout: layout_twocol
+        layout_settings: {  }
+        page_title: ''
+        storage_type: panelizer_default
+        storage_id: 'node:site_posts:default:test_panelizer'
+        pattern: panelizer
+        builder: ipe
+        static_context: {  }
+id: node.site_posts.default
+targetEntityType: node
+bundle: site_posts
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  content_moderation_control:
+    weight: -20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_all_categories:
+    weight: 105
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_comments:
+    weight: 106
+    label: above
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    type: comment_default
+    region: content
+  field_featured_image:
+    weight: 104
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_meta_tags:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
+  field_primary_category:
+    weight: 103
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_tag:
+    weight: 107
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  panelizer: true
+  private_message_link: true

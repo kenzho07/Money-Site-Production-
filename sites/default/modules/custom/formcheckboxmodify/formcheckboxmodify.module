@@ -1,0 +1,9 @@
+<?php
+
+/**
+ * Implements hook_form_alter().
+ */
+function formcheckboxmodify_form_linkit_editor_dialog_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  // Check open in new tab checkbox.
+  $form['linkit_attributes']['target']['#default_value'] = TRUE;
+}

@@ -1,0 +1,5 @@
+enabled: 1
+plaintext_enabled: 0
+autopreview_enabled: 0
+css: ".simplelogin-wrapper {\r\n  font-family:Arial\r\n}\r\n.simplelogin-logo img {\r\n    max-width: 20%;\r\n}\r\n.ipe-categories .ipe-category[data-category=\"Custom\"],.ipe-categories .ipe-category[data-category=\"Chaos Tools\"] ,\r\n.ipe-categories .ipe-category[data-category=\"Dashboard\"] ,\r\n.ipe-categories .ipe-category[data-category=\"Devel\"] ,\r\n.ipe-categories .ipe-category[data-category=\"Help\"] ,\r\n.ipe-categories .ipe-category[data-category=\"Social Auth\"] \r\n.ipe-categories .ipe-category[data-category=\"System\"],\r\n.ipe-categories .ipe-category[data-category=\"Menus\"] , \r\n.ipe-categories .ipe-category[data-category=\"Social Auth\"] ,\r\n.ipe-categories .ipe-category[data-category=\"core\"] \r\n{\r\n    display: none;\r\n}\r\n\r\n.filter-help { \r\n    display: none;\r\n}\r\n#block-comments, #block-views-block-comments-recent-block-1 {\r\n      border-top: 1px solid #999999;\r\n}"
+path: 'public://css_editor/bartik.css'

@@ -1,0 +1,6 @@
+name: formcheckboxmodify
+type: module
+description: 'FormCheckboxModify'
+package: Custom
+version: 8.x
+core: 8.x

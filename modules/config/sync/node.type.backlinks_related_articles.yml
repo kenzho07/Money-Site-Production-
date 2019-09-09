@@ -1,0 +1,17 @@
+uuid: 6cd6fa8e-6a46-4f18-abba-690f6534a0da
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Backlinks Related Articles'
+type: backlinks_related_articles
+description: 'All Backlinks Related details from WordPress - API Integration'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

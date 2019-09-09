@@ -1,0 +1,11 @@
+private_message_adjust:
+  version: 1
+  css:
+    base:
+      src/css/private_message_adjust.css: {}
+  js:
+    src/js/private_message_adjust.js: {preprocess: false}
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
+  header: true

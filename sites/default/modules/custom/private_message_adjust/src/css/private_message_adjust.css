@@ -1,0 +1,63 @@
+.textColorClass{
+ color: greenyellow
+}
+
+/* hide the notification from page */
+#block-private-message-notification-block{
+  height: 0px;
+}
+
+#toolbar-link-page_manager-page_view_private_message_private_message-panels_variant-0:before{
+  background-image: url('../images/envelop.svg');
+  background-repeat: no-repeat;
+  background-position: left;
+  padding-left: 5px;
+}
+
+/* Add css to unread message */
+div.block-private-message-inbox-block > div.unread-thread{
+  border: solid #5FE39A 2px;
+  background-color: #5FE39A;
+}
+
+div.block-private-message-inbox-block > div.unread-thread:hover{
+  background-color: #5FE39A;
+  border: solid #0174bd 2px;
+}
+
+.block-private-message-inbox-block > div.private-message-thread{
+  background-color: #c7c7c7;
+  border: solid #fff 2px;
+}
+
+.block-private-message-inbox-block > div.private-message-thread:hover{
+  border: solid #0174bd 2px;
+  background-color: lightgray;
+}
+
+#pm-members-autocomplete-results-wrapper {
+  background-color: #fff;
+  border-top:1px solid #777;
+  border-left:1px solid #777;
+  border-right:1px solid #777;
+  z-index: 999;
+}
+
+#pm-members-autocomplete-results-wrapper > ul > li {
+  border-bottom: 1px solid #777;
+  padding: 5px;
+}
+
+#pm-members-autocomplete-results-wrapper > ul > li:hover {
+  background-color: #D3D3D3;
+}
+
+#pm-members-autocomplete-results-wrapper > ul > li > a {
+  text-decoration: none;
+}
+
+.private_message_newText{
+  color: red;
+  text-decoration: underline;
+  padding-bottom: 5px;
+}

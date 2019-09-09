@@ -1,0 +1,6 @@
+name: scanlinks
+type: module
+description: 'Edit Phase : Scan all the links inside the body content'
+package: Custom
+version: 8.x
+core: 8.x

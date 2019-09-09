@@ -1,0 +1,6 @@
+name: Cron Module for Updating Backlinks from API
+type: module
+description: 'Cron Module for Updating Backlinks from API'
+package: Custom
+version: 8.x
+core: 8.x

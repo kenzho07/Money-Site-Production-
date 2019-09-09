@@ -1,0 +1,12 @@
+uuid: a62ff746-b744-47e3-a8fe-2d3e8faa3d9e
+langcode: en
+status: true
+dependencies: {  }
+id: private_message
+label: 'Private Message'
+description: ''
+use_admin_theme: true
+path: /admin/private_message
+access_logic: and
+access_conditions: {  }
+parameters: {  }

@@ -1,0 +1,12 @@
+uuid: 322d04a2-e307-4380-a77a-c14595c940c4
+langcode: en
+status: true
+dependencies: {  }
+id: text_and_table
+label: 'Text and Table'
+image: 'public://ckeditor-templates/template3.gif'
+description: 'A title with some text and a table.'
+html:
+  value: "<h2><strong>Title goes here</strong></h2>\r\n\r\n<table align=\"right\" style=\"width: 50%;\">\r\n\t<caption><strong>Table title</strong></caption>\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t\t<td>&nbsp;</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>\r\n\r\n<p>Type the text here&nbsp;</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed enim ut sem viverra aliquet eget sit. Nunc sed blandit libero volutpat sed. Suspendisse sed nisi lacus sed. Sed faucibus turpis in eu mi bibendum neque egestas. Posuere sollicitudin aliquam ultrices sagittis orci a. A lacus vestibulum sed arcu non odio euismod. Nunc sed augue lacus viverra vitae congue. At volutpat diam ut venenatis tellus in. Duis ut diam quam nulla porttitor massa id neque aliquam. Tortor at risus viverra adipiscing at in tellus.</p>\r\n\r\n<p>Sem nulla pharetra diam sit amet nisl. Bibendum enim facilisis gravida neque. Donec adipiscing tristique risus nec feugiat. Nibh nisl condimentum id venenatis a condimentum vitae. Leo vel orci porta non pulvinar neque laoreet suspendisse. Pellentesque dignissim enim sit amet venenatis urna cursus eget. Eu turpis egestas pretium aenean pharetra. Quis vel eros donec ac. Non tellus orci ac auctor augue mauris. Ligula ullamcorper malesuada proin libero nunc consequat interdum varius. Lacinia at quis risus sed vulputate odio ut enim. Ut tortor pretium viverra suspendisse. Et netus et malesuada fames. Leo a diam sollicitudin tempor id eu nisl nunc. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna.</p>\r\n"
+  format: full_html
+weight: 2

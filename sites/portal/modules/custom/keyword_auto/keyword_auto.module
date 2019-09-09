@@ -1,0 +1,42 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+
+    //Function that generate keywords.
+	function getLongTailKeywords($str, $len = 2, $min = 2)
+  {
+    $keywords = array();
+          $common = ['i','you','am','me','now','our','not','but','your','my','a','about','an','and','are','as','at','be','by','com','de','en','for','from','how','in','is','it','la','of','on','or','that','the','this','to','was','what','when','where','who','will','with','und','the','www'];
+          $str = preg_replace('/[^a-z0-9\s-]+/', '', strtolower(strip_tags($str)));
+          $str = preg_split('/\s+-\s+|\s+/', $str, 0, PREG_SPLIT_NO_EMPTY);
+            while(0<$len--) for($i=1;$i<count($str)-$len;$i++)
+            {
+              $word = array_slice($str, $i, $len);
+              if(in_array($word[0], $common)||in_array(end($word), $common)) continue;
+              $word = implode('', $word);
+              if(! isset($keywords[$len][$word]))
+                $keywords[$len][$word] = 0;
+              $keywords[$len][$word]++;
+            }
+          $return = array();
+          foreach($keywords as &$keyword){
+              $keyword = array_filter($keyword, function($v) use($min){ return !!($v>$min); });
+              arsort($keyword);
+              $return = array_merge($return, $keyword);
+          }
+    return $return;
+		}
+
+		function sample_callback($form) {
+	  //Target the body of Post Article.
+		$body_value = strip_tags($form['body']['widget']['0']['#default_value']);
+		$word_pieces = explode(",",$body_value,6);
+		$word_concatenate = '';
+      foreach($word_pieces as $key => $value){
+        if($key < 5){
+             $word_concatenate .= rtrim($value, ',') . ',';
+        }
+      }
+      return array_flip(getLongTailKeywords($word_concatenate));
+    }
+

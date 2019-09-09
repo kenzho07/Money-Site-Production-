@@ -1,0 +1,32 @@
+uuid: 6633afa4-d045-4844-b5de-a1bc83735ecf
+langcode: en
+status: true
+dependencies: {  }
+id: editor
+label: Editor
+weight: 4
+is_admin: null
+permissions:
+  - 'access content'
+  - 'access content overview'
+  - 'access panels in-place editing'
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'administer blocks'
+  - 'administer node fields'
+  - 'administer panelizer node site_posts content'
+  - 'administer panelizer node site_posts defaults'
+  - 'administer panelizer node site_posts layout'
+  - 'administer panelizer node site_posts revert'
+  - 'create site_posts content'
+  - 'delete own site_posts content'
+  - 'edit own site_posts content'
+  - 'have total control'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition submit_draft_for_review'
+  - 'use text format full_html'
+  - 'view all revisions'
+  - 'view latest version'
+  - 'view own unpublished content'
+  - 'view site_posts revisions'
+  - 'view the administration theme'

@@ -1,0 +1,5 @@
+name: update of vartheme_admin
+description: overwriting 
+core: 8.x
+type: theme
+base theme: vartheme_admin

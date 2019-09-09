@@ -1,0 +1,18 @@
+uuid: d7b89b95-1f72-4964-be27-caa8211c2963
+langcode: en
+status: true
+dependencies: {  }
+id: step_4
+workflow: editorial
+transitions:
+  archive: archive
+roles:
+  administrator: administrator
+  team_leader: team_leader
+author: true
+emails: ''
+subject: 'CMS Portal - Content has been Archived'
+body:
+  value: "<p>Hi,</p>\r\n\r\n<p>Your content has been Archived.</p>\r\n\r\n<p>- CMS Portal</p>\r\n"
+  format: full_html
+label: 'Step 4 - A'

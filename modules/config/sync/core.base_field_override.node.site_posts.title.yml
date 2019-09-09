@@ -1,0 +1,18 @@
+uuid: 915e9d0f-dd98-4678-91ff-d887da023aa4
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.site_posts
+id: node.site_posts.title
+field_name: title
+entity_type: node
+bundle: site_posts
+label: 'Page Title'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

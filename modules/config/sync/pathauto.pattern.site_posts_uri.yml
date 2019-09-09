@@ -1,0 +1,22 @@
+uuid: df792f26-8b60-484d-b8e6-65850240c2e2
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: site_posts_uri
+label: 'Site Posts URI'
+type: 'canonical_entities:node'
+pattern: '[node:field_primary_category:entity:parents:join-path]/[node:field_primary_category:entity:name]/[node:title]'
+selection_criteria:
+  3ce1c7b9-deb6-4fad-95a4-6b6ec3abe3d8:
+    id: node_type
+    bundles:
+      site_posts: site_posts
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 3ce1c7b9-deb6-4fad-95a4-6b6ec3abe3d8
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -1,0 +1,17 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ *
+ * Changes relationship attribute type from textfield to select
+ * with default values.
+ */
+function linkit_form_relationship_form_linkit_editor_dialog_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $relationships = array(t('nofollow'), t('noreferrer'), t('noopener'));
+  $form['linkit_attributes']['rel']['#type'] = 'select';
+  $form['linkit_attributes']['rel']['#options'] = $relationships;
+  $form['linkit_attributes']['rel']['#maxlength'] = 40;
+  $form['linkit_attributes']['rel']['#size'] = 1;
+}

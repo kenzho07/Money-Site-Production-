@@ -1,0 +1,23 @@
+uuid: 364685df-6f59-4e6a-b29e-807bf953a5bd
+langcode: en
+status: true
+dependencies:
+  module:
+    - private_message
+  theme:
+    - vartheme_admin
+_core:
+  default_config_hash: 1Su2qJRrtdJ9C2bPXBqDEQRGQLryN3HjtF4pcgsvH_A
+id: privatemessagenotification
+theme: vartheme_admin
+region: header
+weight: -3
+provider: null
+plugin: private_message_notification_block
+settings:
+  id: private_message_notification_block
+  label: 'Private Message Notification'
+  provider: private_message
+  label_display: '0'
+  ajax_refresh_rate: 15
+visibility: {  }

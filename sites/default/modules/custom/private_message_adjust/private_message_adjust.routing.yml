@@ -1,0 +1,8 @@
+private_message_adjust.my_page:
+  path: '/admin/custom/private_message_adjust'
+  defaults:
+    _controller: '\Drupal\private_message_adjust\Controller\PrivateMessageAdjustController::privateMessageAdjust'
+    _title: 'JS adjustment for private message'
+  method: [GET]
+  requirements: 
+    _permission: 'access content'

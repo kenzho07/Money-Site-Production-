@@ -1,0 +1,29 @@
+uuid: 2f22696a-b190-4c7a-84fa-2b05a53196d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_primary_category
+    - node.type.site_posts
+    - taxonomy.vocabulary.robots_categories
+id: node.site_posts.field_primary_category
+field_name: field_primary_category
+entity_type: node
+bundle: site_posts
+label: 'Primary Category/Taxonomy'
+description: 'Please select the Category of the Article. To generate the proper URL.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      robots_categories: robots_categories
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
