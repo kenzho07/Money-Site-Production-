@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * Implements hook_form_alter()
+ */
+  function scanlinks_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+    //ksm($form);
+
+    if($form_id ==='node_site_posts_edit_form' || $form_id === 'node_site_posts_form') {
+      ksm($form);
+      $form['field_meta_tags']['widget']['0']['basic']['keywords']['#default_value'] = "love me hate";
+    }
+  }

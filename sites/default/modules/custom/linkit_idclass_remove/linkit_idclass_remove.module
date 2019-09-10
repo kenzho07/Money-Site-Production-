@@ -1,0 +1,20 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ *
+ * Changes relationship attribute type from textfield to select
+ * with default values.
+ */
+function linkit_idclass_remove_form_linkit_editor_dialog_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+	
+  //Check open in new tab checkbox.
+ 
+  $form['linkit_attributes']['advanced']['#title'] =t('aaa');
+ 
+
+}
+
+

@@ -1,0 +1,4 @@
+name: Link Stats
+type: module
+description: Manage Statistics of Links used in Body field
+core: 8.x

@@ -1,0 +1,10 @@
+<?php
+
+/**
+ *
+ *  hook_ckeditor_css_alter().
+ */
+ function pastefromthewordextend_ckeditor_css_alter(array &$css, \Drupal\editor\Entity\Editor $editor) {
+	// Add custom css to ckeditor while using copy paste from Word doc
+	$css[] = drupal_get_path('module', 'pastefromthewordextend') . '/css/pastefromthewordextend-ckeditor.css';
+ }

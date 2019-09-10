@@ -1,0 +1,6 @@
+name: Remove the ID and CSS Class
+type: module
+description: 'Remove the ID and CSS Class'
+package: Custom
+version: 8.x
+core: 8.x

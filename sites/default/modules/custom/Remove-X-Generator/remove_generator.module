@@ -15,3 +15,4 @@ function remove_generator_page_attachments_alter(array &$attachments) {
     }
   }
 }
+

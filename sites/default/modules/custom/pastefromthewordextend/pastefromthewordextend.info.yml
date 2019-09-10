@@ -1,0 +1,6 @@
+name: pastfromthewordextend
+type: module
+description: 'Paste from the word module extension.'
+package: Custom
+version: 8.x
+core: 8.x

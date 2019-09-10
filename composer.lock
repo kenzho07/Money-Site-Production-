@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3c61a39293f18a6210308e363b321db7",
+    "content-hash": "170a8279ba1cd07e5389b7ee7095dd0c",
     "packages": [
         {
             "name": "adam-paterson/oauth2-slack",
@@ -1000,16 +1000,16 @@
         },
         {
             "name": "doctrine/common",
-            "version": "v2.10.0",
+            "version": "v2.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/common.git",
-                "reference": "30e33f60f64deec87df728c02b107f82cdafad9d"
+                "reference": "b8ca1dcf6b0dc8a2af7a09baac8d0c48345df4ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/common/zipball/30e33f60f64deec87df728c02b107f82cdafad9d",
-                "reference": "30e33f60f64deec87df728c02b107f82cdafad9d",
+                "url": "https://api.github.com/repos/doctrine/common/zipball/b8ca1dcf6b0dc8a2af7a09baac8d0c48345df4ff",
+                "reference": "b8ca1dcf6b0dc8a2af7a09baac8d0c48345df4ff",
                 "shasum": ""
             },
             "require": {
@@ -1025,14 +1025,16 @@
             },
             "require-dev": {
                 "doctrine/coding-standard": "^1.0",
-                "phpunit/phpunit": "^6.3",
+                "phpstan/phpstan": "^0.11",
+                "phpstan/phpstan-phpunit": "^0.11",
+                "phpunit/phpunit": "^7.0",
                 "squizlabs/php_codesniffer": "^3.0",
                 "symfony/phpunit-bridge": "^4.0.5"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.10.x-dev"
+                    "dev-master": "2.11.x-dev"
                 }
             },
             "autoload": {
@@ -1046,16 +1048,16 @@
             ],
             "authors": [
                 {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
                     "name": "Roman Borschel",
                     "email": "roman@code-factory.org"
                 },
                 {
                     "name": "Benjamin Eberlei",
                     "email": "kontakt@beberlei.de"
-                },
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com"
                 },
                 {
                     "name": "Jonathan Wage",
@@ -1077,7 +1079,7 @@
                 "doctrine",
                 "php"
             ],
-            "time": "2018-11-21T01:24:55+00:00"
+            "time": "2019-09-10T10:10:14+00:00"
         },
         {
             "name": "doctrine/event-manager",
@@ -2220,6 +2222,65 @@
             }
         },
         {
+            "name": "drupal/dynamic_entity_reference",
+            "version": "1.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/dynamic_entity_reference.git",
+                "reference": "8.x-1.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/dynamic_entity_reference-8.x-1.7.zip",
+                "reference": "8.x-1.7",
+                "shasum": "48473adb20413babb548a2501e396e66f13c30f2"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.7",
+                    "datestamp": "1565737269",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Lee Rowlands",
+                    "homepage": "https://www.drupal.org/u/larowlan",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Jibran Ijaz",
+                    "homepage": "https://www.drupal.org/u/jibran",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "larowlan",
+                    "homepage": "https://www.drupal.org/user/395439"
+                }
+            ],
+            "description": "Provides a field that allows an entity-reference field to reference more than one entity type.",
+            "homepage": "http://drupal.org/project/dynamic_entity_reference",
+            "support": {
+                "source": "http://cgit.drupalcode.org/dynamic_entity_reference",
+                "issues": "http://drupal.org/project/dynamic_entity_reference",
+                "irc": "irc://irc.freenode.org/drupal-contribute"
+            }
+        },
+        {
             "name": "drupal/editor_advanced_link",
             "version": "1.4.0",
             "source": {
@@ -2442,6 +2503,59 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/imce"
             }
+        },
+        {
+            "name": "drupal/linkchecker",
+            "version": "dev-1.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/linkchecker.git",
+                "reference": "4f9c6125010c638728dc1c2ad6c91f1821296d7f"
+            },
+            "require": {
+                "drupal/core": "^8.6.0",
+                "drupal/dynamic_entity_reference": "^1.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.x-dev",
+                    "datestamp": "1561891085",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^9"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "hass",
+                    "homepage": "https://www.drupal.org/u/hass"
+                },
+                {
+                    "name": "See other contributors",
+                    "homepage": "https://www.drupal.org/node/243795/committers"
+                }
+            ],
+            "description": "Periodically checks for broken links in node types, blocks and fields and reports the results.",
+            "homepage": "https://www.drupal.org/project/linkchecker",
+            "support": {
+                "source": "https://git.drupal.org/project/linkchecker.git",
+                "issues": "https://www.drupal.org/project/issues/linkchecker"
+            },
+            "time": "2019-06-30T10:39:51+00:00"
         },
         {
             "name": "drupal/message",
