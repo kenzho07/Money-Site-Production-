@@ -129,7 +129,7 @@ class LinkStatsController extends ControllerBase {
 		}
 		curl_close($curl);
   	}
-  	return false;
+  	return true;
   }
 
 }
