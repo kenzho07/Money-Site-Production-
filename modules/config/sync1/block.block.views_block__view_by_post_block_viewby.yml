@@ -1,0 +1,33 @@
+uuid: bd339011-afe3-41c0-816a-86a71d6b8c35
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.view_by_post
+  module:
+    - node
+    - views
+  theme:
+    - bartik
+id: views_block__view_by_post_block_viewby
+theme: bartik
+region: content
+weight: -7
+provider: null
+plugin: 'views_block:view_by_post-block_viewby'
+settings:
+  id: 'views_block:view_by_post-block_viewby'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      site_posts: site_posts
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

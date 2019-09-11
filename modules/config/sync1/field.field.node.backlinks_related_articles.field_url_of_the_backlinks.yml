@@ -1,0 +1,19 @@
+uuid: 26bf30aa-33e4-4a17-9291-c63d4e17fb1a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_url_of_the_backlinks
+    - node.type.backlinks_related_articles
+id: node.backlinks_related_articles.field_url_of_the_backlinks
+field_name: field_url_of_the_backlinks
+entity_type: node
+bundle: backlinks_related_articles
+label: 'URL of the Backlinks'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

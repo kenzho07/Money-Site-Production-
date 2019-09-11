@@ -1,0 +1,19 @@
+uuid: 95445941-b31e-46b5-a271-98459dfcfb7a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content_created
+    - node.type.backlinks_related_articles
+id: node.backlinks_related_articles.field_content_created
+field_name: field_content_created
+entity_type: node
+bundle: backlinks_related_articles
+label: 'Content created'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

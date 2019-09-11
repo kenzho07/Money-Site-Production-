@@ -1,0 +1,29 @@
+uuid: c949473c-f461-44b1-b499-e35755458e6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.private_message_author
+    - field.field.user.user.field_fir
+    - field.field.user.user.field_last_name
+    - field.field.user.user.user_picture
+  module:
+    - user
+_core:
+  default_config_hash: 5VkjdDDe_kM-giLC61z36ACn6Z2eMjaH63Rh6adWWpw
+id: user.user.private_message_author
+targetEntityType: user
+bundle: user
+mode: private_message_author
+content:
+  linked_username:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_fir: true
+  field_last_name: true
+  member_for: true
+  private_message_link: true
+  user_picture: true

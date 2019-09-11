@@ -1,0 +1,12 @@
+uuid: c378c990-79ab-4eca-9b49-ba60790b1f17
+langcode: en
+status: true
+dependencies: {  }
+id: image_and_title
+label: 'Image and Title'
+image: 'public://ckeditor-templates/template1.gif'
+description: 'One main image with a title and text that surround the image.'
+html:
+  value: "<p><img alt=\"template1\" data-align=\"left\" data-entity-type=\"file\" data-entity-uuid=\"fbf6db9a-fbd1-4538-9ec8-a766f6d241fb\" src=\"/sites/portal/files/inline-images/template1.gif\" /></p>\r\n\r\n<p>&nbsp;<strong>Type the title here</strong></p>\r\n\r\n<p>&nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n"
+  format: full_html
+weight: 3

@@ -1,0 +1,7 @@
+link_status.content:
+  path: '/node/{node}/link_status'
+  defaults:
+    _controller: '\Drupal\link_status\Controller\LinkStatesController::LinkStatus'
+    _title: 'Link Statistic'
+  requirements:
+    _permission: 'access content'

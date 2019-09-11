@@ -1,0 +1,14 @@
+uuid: 1c1ed86e-7a85-4c34-a227-07bf30c9e182
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: pj2LJUXR2Dhdq155xqCz7-s4L4nSVlf2RgtfBkkFmRc
+id: total_control_dashboard
+label: 'Total Control dashboard'
+description: 'Total Control administrative dashboard.'
+use_admin_theme: true
+path: /admin/dashboard
+access_logic: and
+access_conditions: {  }
+parameters: {  }

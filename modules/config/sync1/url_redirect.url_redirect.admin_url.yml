@@ -1,0 +1,15 @@
+uuid: ed44128d-124c-40fb-a35b-7c94eabed8a6
+langcode: en
+status: '1'
+dependencies: {  }
+id: admin_url
+label: 'Admin Url'
+message: 'No'
+path: admin
+redirect_path: user/login
+checked_for: User
+negate: false
+user:
+  -
+    target_id: '0'
+roles: {  }

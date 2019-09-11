@@ -1,0 +1,124 @@
+diff --git a/composer.json b/composer.json
+index 4ace769..feb0d07 100644
+--- a/composer.json
++++ b/composer.json
+@@ -37,7 +37,7 @@
+   "license": "GPL-2.0+",
+   "minimum-stability": "dev",
+   "require": {
+-    "drupal/ctools": ">=3.0.0-beta1",
++    "drupal/ctools": ">=3.1",
+     "drupal/panels": ">=4.0.0-alpha1",
+     "drupal/panels_ipe": ">=4.0.0-alpha1"
+   }
+diff --git a/src/Form/PanelizerWizardContextConfigure.php b/src/Form/PanelizerWizardContextConfigure.php
+index a7ab050..ddfacd9 100644
+--- a/src/Form/PanelizerWizardContextConfigure.php
++++ b/src/Form/PanelizerWizardContextConfigure.php
+@@ -2,10 +2,11 @@
+ 
+ namespace Drupal\panelizer\Form;
+ 
++use Drupal\Core\Entity\EntityTypeManagerInterface;
+ use Drupal\Core\Plugin\Context\ContextInterface;
+ use Drupal\ctools\ContextMapperInterface;
+ use Drupal\ctools\Form\ContextConfigure;
+-use Drupal\user\SharedTempStoreFactory;
++use Drupal\Core\TempStore\SharedTempStoreFactory;
+ use Symfony\Component\DependencyInjection\ContainerInterface;
+ 
+ /**
+@@ -23,13 +24,15 @@ class PanelizerWizardContextConfigure extends ContextConfigure {
+   /**
+    * PanelizerWizardContextConfigure constructor.
+    *
+-   * @param \Drupal\user\SharedTempStoreFactory $tempstore
++   * @param \Drupal\Core\TempStore\SharedTempStoreFactory $tempstore
+    *   The shared tempstore factory.
+    * @param \Drupal\ctools\ContextMapperInterface $context_mapper
+    *   The context mapper.
++   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
++   *   The entity type manager.
+    */
+-  public function __construct(SharedTempStoreFactory $tempstore, ContextMapperInterface $context_mapper) {
+-    parent::__construct($tempstore);
++  public function __construct(SharedTempStoreFactory $tempstore, ContextMapperInterface $context_mapper, EntityTypeManagerInterface $entity_type_manager) {
++    parent::__construct($tempstore, $entity_type_manager);
+     $this->contextMapper = $context_mapper;
+   }
+ 
+@@ -38,8 +41,9 @@ class PanelizerWizardContextConfigure extends ContextConfigure {
+    */
+   public static function create(ContainerInterface $container) {
+     return new static(
+-      $container->get('user.shared_tempstore'),
+-      $container->get('ctools.context_mapper')
++      $container->get('tempstore.shared'),
++      $container->get('ctools.context_mapper'),
++      $container->get('entity_type.manager')
+     );
+   }
+ 
+diff --git a/src/Form/PanelizerWizardContextForm.php b/src/Form/PanelizerWizardContextForm.php
+index 44b6da7..8e8a9ca 100644
+--- a/src/Form/PanelizerWizardContextForm.php
++++ b/src/Form/PanelizerWizardContextForm.php
+@@ -8,7 +8,8 @@ use Drupal\Core\Form\FormBuilderInterface;
+ use Drupal\Core\Form\FormStateInterface;
+ use Drupal\Core\TypedData\TypedDataManagerInterface;
+ use Drupal\ctools\Form\ManageContext;
+-use Drupal\user\SharedTempStoreFactory;
++use Drupal\ctools\TypedDataResolver;
++use Drupal\Core\TempStore\SharedTempStoreFactory;
+ use Symfony\Component\DependencyInjection\ContainerInterface;
+ 
+ /**
+@@ -24,7 +25,7 @@ class PanelizerWizardContextForm extends ManageContext {
+   /**
+    * The shared temp store factory.
+    *
+-   * @var \Drupal\user\SharedTempStoreFactory
++   * @var \Drupal\Core\TempStore\SharedTempStoreFactory
+    */
+   protected $tempstoreFactory;
+ 
+@@ -35,7 +36,8 @@ class PanelizerWizardContextForm extends ManageContext {
+     return new static(
+       $container->get('typed_data_manager'),
+       $container->get('form_builder'),
+-      $container->get('user.shared_tempstore')
++      $container->get('ctools.typed_data.resolver'),
++      $container->get('tempstore.shared')
+     );
+   }
+ 
+@@ -46,11 +48,13 @@ class PanelizerWizardContextForm extends ManageContext {
+    *   The typed data manager.
+    * @param \Drupal\Core\Form\FormBuilderInterface $form_builder
+    *   The form builder.
+-   * @param \Drupal\user\SharedTempStoreFactory $tempstore_factory
++   * @param \Drupal\ctools\TypedDataResolver $typed_data_resolver
++   *   The typed data resolver.
++   * @param \Drupal\Core\TempStore\SharedTempStoreFactory $tempstore_factory
+    *   Shared user tempstore factory.
+    */
+-  public function __construct(TypedDataManagerInterface $typed_data_manager, FormBuilderInterface $form_builder, SharedTempStoreFactory $tempstore_factory) {
+-    parent::__construct($typed_data_manager, $form_builder);
++  public function __construct(TypedDataManagerInterface $typed_data_manager, FormBuilderInterface $form_builder, TypedDataResolver $typed_data_resolver, SharedTempStoreFactory $tempstore_factory) {
++    parent::__construct($typed_data_manager, $form_builder, $typed_data_resolver);
+     $this->tempstoreFactory = $tempstore_factory;
+   }
+ 
+diff --git a/src/Plugin/PanelsPattern/PanelizerPattern.php b/src/Plugin/PanelsPattern/PanelizerPattern.php
+index e11167a..85b9508 100644
+--- a/src/Plugin/PanelsPattern/PanelizerPattern.php
++++ b/src/Plugin/PanelsPattern/PanelizerPattern.php
+@@ -6,7 +6,7 @@ use Drupal\Core\Plugin\Context\Context;
+ use Drupal\Core\Plugin\Context\ContextDefinition;
+ use Drupal\ctools\Context\AutomaticContext;
+ use Drupal\panels\Plugin\PanelsPattern\DefaultPattern;
+-use Drupal\user\SharedTempStoreFactory;
++use Drupal\Core\TempStore\SharedTempStoreFactory;
+ 
+ /**
+  * @PanelsPattern("panelizer")

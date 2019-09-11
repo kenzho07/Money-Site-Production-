@@ -1,0 +1,8 @@
+uuid: 32189458-fe47-427d-8c55-2748d3cc0e6f
+langcode: en
+status: true
+dependencies: {  }
+name: 'Robots.net Categories'
+vid: robots_categories
+description: 'All Categories for Articles'
+weight: 0

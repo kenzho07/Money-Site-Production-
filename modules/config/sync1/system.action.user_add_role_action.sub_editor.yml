@@ -1,0 +1,14 @@
+uuid: 2998d024-decf-42bc-a3dd-692922cf6af9
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.sub_editor
+  module:
+    - user
+id: user_add_role_action.sub_editor
+label: 'Add the Sub-Editor role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: sub_editor

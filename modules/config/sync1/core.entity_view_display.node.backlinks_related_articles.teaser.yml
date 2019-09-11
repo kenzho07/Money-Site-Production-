@@ -1,0 +1,30 @@
+uuid: 65511f15-9b6e-46b6-9df5-877fae032cc8
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.backlinks_related_articles.body
+    - node.type.backlinks_related_articles
+  module:
+    - text
+    - user
+id: node.backlinks_related_articles.teaser
+targetEntityType: node
+bundle: backlinks_related_articles
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

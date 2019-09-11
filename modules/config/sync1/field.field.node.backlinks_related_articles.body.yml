@@ -1,0 +1,22 @@
+uuid: 3de0bdcf-2e72-4f48-9546-923151d25af7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.backlinks_related_articles
+  module:
+    - text
+id: node.backlinks_related_articles.body
+field_name: body
+entity_type: node
+bundle: backlinks_related_articles
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

@@ -1,0 +1,20 @@
+uuid: 6c7b6c4a-8ad9-4689-aa04-ab4442317cdd
+langcode: en
+status: true
+dependencies:
+  theme:
+    - vartheme_admin
+_core:
+  default_config_hash: v1enD2fz4C3wolm8BUYjb2fkUHrKK3pqLGuoIEVfkL4
+id: vartheme_admin_page_title
+theme: vartheme_admin
+region: header
+weight: -30
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

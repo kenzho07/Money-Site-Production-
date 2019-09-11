@@ -1,0 +1,28 @@
+uuid: b057f9bb-a669-4b54-87be-21bfe7395efb
+langcode: en
+status: true
+dependencies:
+  module:
+    - addtoany
+    - node
+  theme:
+    - bartik
+id: addtoanybuttons
+theme: bartik
+region: content
+weight: -6
+provider: null
+plugin: addtoany_block
+settings:
+  id: addtoany_block
+  label: 'AddToAny buttons'
+  provider: addtoany
+  label_display: '0'
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      site_posts: site_posts
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

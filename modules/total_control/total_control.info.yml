@@ -1,0 +1,19 @@
+name: 'Total Control'
+description: 'Total Control Administration Dashboard'
+type: module
+# core: 8.x
+# version: 8.x-2.x-dev
+package: Administration
+# project: total_control
+dependencies:
+  - drupal:block
+  - drupal:views
+  - ctools:ctools
+  - panels:panels
+  - page_manager:page_manager
+
+# Information added by Drupal.org packaging script on 2019-06-25
+version: '8.x-2.0-beta2'
+core: '8.x'
+project: 'total_control'
+datestamp: 1561489389

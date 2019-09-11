@@ -1,0 +1,4 @@
+name: Link Status
+type: module
+description: Manage statistics of links and broken links used in body field.
+core: 8.x

@@ -1,0 +1,19 @@
+uuid: 8d816ae1-84f3-4599-8315-0ab173f384a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_feature_image_link
+    - node.type.backlinks_related_articles
+id: node.backlinks_related_articles.field_feature_image_link
+field_name: field_feature_image_link
+entity_type: node
+bundle: backlinks_related_articles
+label: 'Feature Image Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

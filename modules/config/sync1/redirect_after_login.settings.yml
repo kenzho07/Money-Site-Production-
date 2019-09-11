@@ -1,0 +1,9 @@
+login_redirection:
+  anonymous: null
+  authenticated: /admin/content
+  administrator: /
+  team_leader: /admin/content
+  editor: /admin/content
+  sub_editor: /admin/content
+  freelancer: /admin/content
+exclude_urls: ''

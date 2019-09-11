@@ -1,0 +1,18 @@
+uuid: c1c4b7b3-d7a4-4985-a109-ab3e8198aae8
+langcode: en
+status: true
+dependencies: {  }
+id: step_4_b
+workflow: editorial
+transitions:
+  return_draft: return_draft
+roles:
+  administrator: administrator
+  team_leader: team_leader
+author: true
+emails: ''
+subject: 'CMS Portal - Content has been reverted to Draft'
+body:
+  value: "<p>Hi,</p>\r\n\r\n<p>Your content has been reverted to Draft for your changes.</p>\r\n\r\n<p>- CMS Portal</p>\r\n"
+  format: full_html
+label: 'Step 4 - B'

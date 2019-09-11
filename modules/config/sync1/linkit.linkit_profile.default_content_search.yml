@@ -1,0 +1,53 @@
+uuid: 24b30f5c-a5bf-4d41-96b8-4380ba614b19
+langcode: en
+status: true
+dependencies:
+  module:
+    - imce
+    - node
+third_party_settings:
+  imce:
+    use: true
+    scheme: public
+id: default_content_search
+label: 'Default Content Search'
+description: ''
+attributes:
+  target:
+    id: target
+    weight: -10
+    settings:
+      widget_type: simple_checkbox
+  title:
+    id: title
+    weight: -9
+    settings:
+      automatic_title: true
+  id:
+    id: id
+    weight: -8
+    settings: {  }
+  relationship:
+    id: relationship
+    weight: -7
+    settings: {  }
+matchers:
+  00a870dd-b0fc-47e4-939a-3bb2c32dfed9:
+    uuid: 00a870dd-b0fc-47e4-939a-3bb2c32dfed9
+    id: 'entity:node'
+    weight: 0
+    settings:
+      result_description: 'by [node:author] - [node:author:created]'
+      bundles:
+        site_posts: site_posts
+      group_by_bundle: false
+      include_unpublished: false
+  7f86d43c-73c4-4b63-a8d9-8376d49d1fc2:
+    uuid: 7f86d43c-73c4-4b63-a8d9-8376d49d1fc2
+    id: 'entity:node'
+    weight: 0
+    settings:
+      result_description: ''
+      bundles: {  }
+      group_by_bundle: false
+      include_unpublished: false

@@ -1,0 +1,14 @@
+uuid: edf9652e-6f15-4680-bc67-0e8e6915606e
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.sub_editor
+  module:
+    - user
+id: user_remove_role_action.sub_editor
+label: 'Remove the Sub-Editor role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: sub_editor

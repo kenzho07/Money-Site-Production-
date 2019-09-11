@@ -1,0 +1,87 @@
+uuid: 664040b6-59de-4c15-a4c7-c861ca1dc534
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.site_posts
+  module:
+    - content_moderation
+_core:
+  default_config_hash: Ln7YAg2WXZ-5wn9ib-v9qOKFxF2YZLnwSKtX-V455hE
+id: editorial
+label: Editorial
+type: content_moderation
+type_settings:
+  states:
+    archived:
+      label: Archived
+      weight: 1
+      published: false
+      default_revision: true
+    draft:
+      label: Draft
+      published: false
+      default_revision: false
+      weight: -3
+    published:
+      published: true
+      default_revision: true
+      label: 'Approve and Published'
+      weight: 0
+    return_draft:
+      published: false
+      default_revision: false
+      label: 'Return Draft'
+      weight: -1
+    submit_draft_for_review:
+      published: false
+      default_revision: false
+      label: 'Submit Draft for Review'
+      weight: -2
+  transitions:
+    archive:
+      label: Archive
+      from:
+        - published
+      to: archived
+      weight: 1
+    archived_draft:
+      label: 'Restore to Draft'
+      from:
+        - submit_draft_for_review
+      to: draft
+      weight: -1
+    archived_published:
+      label: Published
+      from:
+        - submit_draft_for_review
+      to: published
+      weight: 0
+    create_new_draft:
+      label: 'Create New Draft'
+      to: draft
+      weight: -3
+      from:
+        - draft
+    return_draft:
+      label: 'Return Draft'
+      from:
+        - published
+      to: return_draft
+      weight: 2
+    return_draft_to_draft:
+      label: 'Return Draft to Draft'
+      from:
+        - return_draft
+      to: draft
+      weight: 3
+    submit_draft_for_review:
+      label: 'Submit Draft for Review'
+      from:
+        - draft
+      to: submit_draft_for_review
+      weight: -2
+  entity_types:
+    node:
+      - site_posts
+  default_moderation_state: draft

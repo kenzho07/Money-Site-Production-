@@ -1,0 +1,46 @@
+uuid: b334d95f-a397-4bea-92f2-63db5bca3c25
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - ctools_block
+    - node
+  theme:
+    - bartik
+id: comments
+theme: bartik
+region: content
+weight: 0
+provider: null
+plugin: 'entity_field:node:field_comments'
+settings:
+  id: 'entity_field:node:field_comments'
+  label: Comments1
+  provider: ctools_block
+  label_display: '0'
+  formatter:
+    label: above
+    type: comment_default
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    weight: 0
+  context_mapping:
+    entity: '@node.node_route_context:node'
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      site_posts: site_posts
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  node_type:
+    id: node_type
+    bundles:
+      site_posts: site_posts
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

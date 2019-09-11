@@ -3,13 +3,13 @@
 namespace Drupal\link_stats\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-Use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\Config\ConfigFactoryInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-Use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Drupal\node\Entity\Node;
-Use Drupal\node\NodeInterface;
-Use DOMDocument;
+use Drupal\node\NodeInterface;
+use DOMDocument;
 /**
 * Class ExactSalesInvoiceController.
 */
@@ -38,7 +38,6 @@ class LinkStatsController extends ControllerBase {
       $container->get('config.factory')
     );
   }
-
 
   /**
   	* stats.
