@@ -3,10 +3,6 @@
 namespace Drupal\link_stats\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-Use Drupal\Core\Config\ConfigFactoryInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
-Use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\RequestStack;
 use Drupal\node\Entity\Node;
 Use Drupal\node\NodeInterface;
 Use DOMDocument;
@@ -15,40 +11,13 @@ Use DOMDocument;
 */
 class LinkStatsController extends ControllerBase {
 
-	 /**
-  * Symfony\Component\HttpFoundation\RequestStack definition.
-  *
-  * @var \Symfony\Component\HttpFoundation\RequestStack
-  */
-  protected $requestStack;
-
-  /**
-  * Constructs a new  object.
-  */
-  public function __construct(RequestStack $request_stack) {
-    $this->requestStack = $request_stack;
-  }
-
-/**
-  * {@inheritdoc}
-  */
-  public static function create(ContainerInterface $container) {
-    return new static(
-      $container->get('request_stack'),
-      $container->get('config.factory')
-    );
-  }
-
-
   /**
   	* stats.
   	*
   	* @return markup
     */
-  public function stats(){
-  	#Get current request
-  	$requests = $this->requestStack->getCurrentRequest();
-  	if ($node = $requests->get('node')) {
+  public function stats($node){
+  	if ($node) {
   		#Loading current Node
   		if (gettype($node) == 'string' && !$node instanceof NodeInterface) {
   			$node = Node::load($node);
@@ -58,8 +27,15 @@ class LinkStatsController extends ControllerBase {
 			   // Get all of the revision ids.
 			   $revision_ids = \Drupal::entityTypeManager()->getStorage('node')->revisionIds($node);
 			   $last_revision_id = end($revision_ids);
+
 			   #If its last/current revision
-			   if ($node->getRevisionId() == $last_revision_id) {
+			   #if ($node->getRevisionId() == $last_revision_id) {
+         
+         #If its last revision
+         // if ($last_revision_id) {
+        
+        #For Current Revision
+         if ($last_revision_id = $node->getRevisionId()) {
 			     // Load the revision.
 			     $last_revision = \Drupal::entityTypeManager()->getStorage('node')->loadRevision($last_revision_id);
 			     if ($last_revision instanceof NodeInterface && $last_revision->hasField('body')) {
@@ -74,7 +50,7 @@ class LinkStatsController extends ControllerBase {
 					foreach ($links as $link){
 						if ($Url = $link->getAttribute('href')) {
 							#Check url is broken or not
-							if (!$this->checkUrlStatus($Url)) {
+							if ($this->checkUrlIsBroken($Url)) {
 								$brokenUrls++;
 							}
 						}
@@ -93,18 +69,24 @@ class LinkStatsController extends ControllerBase {
 					return $build;
 			     }
 			   }
-			}
-  		}
-  	}
+			 }else{
+        drupal_set_message($this->t("Node default revision is not found!"), "error");
+       }
+  		}else{
+      drupal_set_message($this->t("Node is not available!"), "error");
+      }
+    }else{
+      drupal_set_message($this->t("Node is not found!"), "error");
+    }
   	#Output a No data result
-    return ['#markup' => $this->t('There is no data!')];
+    return ['#markup' => $this->t('No data (links) available!')];
   }
 
 
   /*
    * Check url is  broken
    */
-  public function checkUrlStatus($url = null){
+  public function checkUrlIsBroken($url = null){
   	if ($url) {
   		#add base url if there is no http
   		#for internal urls
@@ -122,14 +104,11 @@ class LinkStatsController extends ControllerBase {
 
 		if ($result === false) {
 		    #broken url
-		    return false;
-		} else {
-			#url is working ##$newUrl = curl_getinfo($curl, CURLINFO_EFFECTIVE_URL);
-			return true;
+		    return true;
 		}
 		curl_close($curl);
   	}
-  	return true;
+  	return;
   }
 
 }
