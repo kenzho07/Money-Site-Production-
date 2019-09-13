@@ -1,0 +1,5 @@
+pack_upload.settings:
+  title: Pack & Upload
+  description: 'Confiure Pack & Upload'
+  route_name: pack_upload.config
+  parent: system.admin_config_media

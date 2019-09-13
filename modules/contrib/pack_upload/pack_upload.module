@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ * Contains pack_upload.moduke.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Link;
+
+/**
+ * Implements hook_help().
+ */
+function pack_upload_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.pack_upload':
+      return '<p>' . t('This module uploads a zip/compressed file of images, pdf or documents to a pre-configured directory and extracts it there. Location of directory can be changed through @link.', ['@link' => Link::createFromRoute('admin configuratios', 'pack_upload.config')->toString()]) . '</p>';
+  }
+}

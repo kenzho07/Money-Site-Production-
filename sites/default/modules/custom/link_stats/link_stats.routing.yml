@@ -1,7 +1,7 @@
-link_stats.show_stats:
+link_stats.content:
   path: '/node/{node}/link_stats'
   defaults:
     _controller: '\Drupal\link_stats\Controller\LinkStatsController::stats'
     _title: 'Link Statistics'
   requirements:
-    _permission: 'administer content types'
+    _permission: 'access content'

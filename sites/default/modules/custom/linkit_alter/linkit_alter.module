@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * Hook Form Alter
+ * Remove id and class fields from linikit form
+ **/
+
+function linkit_alter_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if ($form_id == 'linkit_editor_dialog_form' || $form_id == 'editor_link_dialog_form' || strpos($form_id, 'editor_link_dialog_form') !== false) {
+    if (isset($form['linkit_attributes']['id']))
+      $form['linkit_attributes']['id']['#access'] = FALSE;
+
+    if (isset($form['linkit_attributes']['class']))
+      $form['linkit_attributes']['class']['#access'] = FALSE;
+
+  }
+}

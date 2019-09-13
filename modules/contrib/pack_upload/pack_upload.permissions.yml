@@ -1,0 +1,4 @@
+pack and upload:
+  title: 'Use pack & upload'
+  description: 'This permission allow a user to upload packed files & assets to server and extract them to a specified directory.'
+  restrict access: true

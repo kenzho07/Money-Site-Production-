@@ -1,0 +1,13 @@
+name: Pack & Upload
+description: "This module packs assets & files in a tar or zip file, uploads them and extract to a specified directory."
+# core: 8.x
+type: module
+dependencies: 
+  - drupal:node
+configure: pack_upload.config
+
+# Information added by Drupal.org packaging script on 2018-01-08
+version: '8.x-1.2'
+core: '8.x'
+project: 'pack_upload'
+datestamp: 1515395287

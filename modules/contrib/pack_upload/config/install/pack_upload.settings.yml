@@ -1,0 +1,7 @@
+path: "bulk_upload"
+dependencies:
+  module:
+    - pack_upload
+  enforced:
+    module:
+      - pack_upload

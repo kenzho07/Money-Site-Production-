@@ -1,0 +1,22 @@
+/* image alignment */
+img[align="justify"],img[align="center"],img[align="middle"] {
+  display: block;margin: auto;
+}
+img[align="left"] {
+  display: block;float: left;
+}
+
+img[align="right"] {
+  display: block;float: right;
+}
+/* Table alignment */
+table[align="justify"],table[align="center"],table[align="middle"] {
+  display: block;margin: auto;
+}
+table[align="left"] {
+  display: block;float: left;
+}
+
+table[align="right"] {
+  display: block;float: right;
+}

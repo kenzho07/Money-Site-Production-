@@ -1,0 +1,6 @@
+name: Linkit Advance ID and Class Alter
+type: module
+description: 'Remove Id attribute from Linkit module'
+package: Custom
+version: 8.x
+core: 8.x

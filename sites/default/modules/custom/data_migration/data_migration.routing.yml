@@ -1,0 +1,8 @@
+data_migration.cron_url:
+  path: '/admin/config/system/cron/data_migration/{token}'
+  defaults:
+    _controller: '\Drupal\data_migration\Controller\DataMigrationController::migrateData'
+    _title: 'Cron endpoint for data migration from WP sites'
+  method: [GET]
+  requirements:
+    _custom_access: '\Drupal\data_migration\Controller\DataMigrationController::checkValidToken'

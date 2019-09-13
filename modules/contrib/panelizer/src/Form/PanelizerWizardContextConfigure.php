@@ -2,11 +2,10 @@
 
 namespace Drupal\panelizer\Form;
 
-use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Plugin\Context\ContextInterface;
 use Drupal\ctools\ContextMapperInterface;
 use Drupal\ctools\Form\ContextConfigure;
-use Drupal\Core\TempStore\SharedTempStoreFactory;
+use Drupal\user\SharedTempStoreFactory;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -24,15 +23,13 @@ class PanelizerWizardContextConfigure extends ContextConfigure {
   /**
    * PanelizerWizardContextConfigure constructor.
    *
-   * @param \Drupal\Core\TempStore\SharedTempStoreFactory $tempstore
+   * @param \Drupal\user\SharedTempStoreFactory $tempstore
    *   The shared tempstore factory.
    * @param \Drupal\ctools\ContextMapperInterface $context_mapper
    *   The context mapper.
-   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
-   *   The entity type manager.
    */
-  public function __construct(SharedTempStoreFactory $tempstore, ContextMapperInterface $context_mapper, EntityTypeManagerInterface $entity_type_manager) {
-    parent::__construct($tempstore, $entity_type_manager);
+  public function __construct(SharedTempStoreFactory $tempstore, ContextMapperInterface $context_mapper) {
+    parent::__construct($tempstore);
     $this->contextMapper = $context_mapper;
   }
 
@@ -41,9 +38,8 @@ class PanelizerWizardContextConfigure extends ContextConfigure {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('tempstore.shared'),
-      $container->get('ctools.context_mapper'),
-      $container->get('entity_type.manager')
+      $container->get('user.shared_tempstore'),
+      $container->get('ctools.context_mapper')
     );
   }
 

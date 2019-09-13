@@ -1,0 +1,3 @@
+services:
+  pack_upload.archiver_factory:
+    class: Drupal\pack_upload\ArchiverFactory

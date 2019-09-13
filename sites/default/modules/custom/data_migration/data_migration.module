@@ -1,39 +1,27 @@
 <?php
 
-use Drupal\data_migration\Controller\DataMigrationController;
+/**
+ * Implements hook_form_alter().
+ *
+ * Adds custom cron url to existing form
+ */
+function data_migration_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if($form_id === 'system_cron_settings') {
+    $cronUrl = $form['cron_url']['#markup'];
+    $url = buildUrl();
+    $element = t('To run data migration cron, go to <a href=":cron" class="system-cron-settings__link">@cron</a>', [':cron' => $url, '@cron' => $url]);
+    $dataMigrationUrl = '<p>' . $element . '</p>';
+    $form['cron_url']['#markup'] = $cronUrl . $dataMigrationUrl;
+  }
+}
 
 /**
- * Implements hook_cron().
- **/
-function data_migration_cron()
-{
-  // We access our configuration.
-  $cron_config = \Drupal::configFactory()->getEditable('data_migration.settings');
-
-  $interval = $cron_config->get('run_interval');
-  $interval = $interval ?? 180;
-
-  $next_execution = \Drupal::state()->get('data_migration.next_execution', 0);
-
-  if (REQUEST_TIME >= $next_execution) {
-
-    $dataMigration = new DataMigrationController();
-    $result = $dataMigration->migrateData();
-
-    if (! $result ) {
-      \Drupal::logger('data_migration')->notice('data_migration failed');
-    } else {
-      \Drupal::logger('data_migration')->notice('data_migration ran');
-    }
-
-    if (\Drupal::state()->get('data_migration_show_status_message')) {
-      \Drupal::messenger()->addMessage(t('data_migration executed at %time', [
-          '%time' => date('c'),
-        ]));
-      \Drupal::state()->set('data_migration_show_status_message', FALSE);
-    }
-
-    \Drupal::state()->set('data_migration.next_execution', REQUEST_TIME + $interval);
-  }
-
+ * Builds data migration cron url
+ * @return string
+ */
+function buildUrl() {
+  $key = \Drupal::state()->get('system.cron_key');
+  $host = \Drupal::request()->getSchemeAndHttpHost();
+  $path = \Drupal::service('path.current')->getPath();
+  return $host . $path . '/data_migration/' . $key;
 }

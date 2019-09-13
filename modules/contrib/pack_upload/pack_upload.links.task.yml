@@ -1,0 +1,9 @@
+pack_upload.settings:
+  route_name: pack_upload.config
+  title: 'Pack & Upload'
+  base_route: pack_upload.config
+
+pack_upload.upload:
+  title: 'Upload bulk media'
+  route_name: pack_upload.uploadform
+  base_route: pack_upload.config

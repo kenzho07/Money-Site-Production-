@@ -1,0 +1,7 @@
+pack_upload.settings:
+  type: config_object
+  label: 'Pack and Upload Settings'
+  mapping:
+    path:
+      type: string
+      label: 'Extraction Path'

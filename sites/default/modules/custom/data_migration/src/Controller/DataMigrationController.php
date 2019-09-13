@@ -2,9 +2,11 @@
 
 namespace Drupal\data_migration\Controller;
 
+use Drupal\Core\Access\AccessResult;
 use Drupal\node\Entity\Node;
 use GuzzleHttp\Exception\RequestException;
 use Drupal\Component\Serialization\Json;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
  * Updates backlinks from WP API
@@ -12,25 +14,26 @@ use Drupal\Component\Serialization\Json;
 class DataMigrationController{
 
   private $apiGetUrl;
-  private $apiPostUrl;
-  private $apiTaxonomyUrl;
   private $postDefaultValues;
   private $defaultConfig;
   private $uid;
-
-  /**
-   * @return mixed
-   */
+  private $token;
 
   public function __construct()
   {
     $this->loadDefaultConfig();
   }
 
-  public function migrateData() : bool
+  public function migrateData() : JsonResponse
   {
     $results = $this->getDataFromApi();
-    return $this->upsertBacklinks($results);
+
+    return new JsonResponse(
+      [
+        'data' => $this->upsertBacklinks($results),
+        'method' => 'GET'
+      ]
+    );
   }
 
   /***
@@ -58,13 +61,17 @@ class DataMigrationController{
   {
     foreach ($results as $data) {
       $nodeData = $this->processData($data);
-
-      $node = \Drupal::entityTypeManager()->getStorage('node')->loadRevision($data['vid']);
+      $node = \Drupal::entityTypeManager()->getStorage('node')->loadRevision($nodeData['vid']);
 
       if (! $node) {
         $node = Node::create($nodeData);
-        $node->save();
+      } else {
+        $node->content = $nodeData['content'];
+        $node->name = $nodeData['name'];
+        $node->title = $nodeData['title'];
+        $node->url = $nodeData['url'];
       }
+      $node->save();
     }
 
     return true;
@@ -135,7 +142,6 @@ class DataMigrationController{
   {
     $mappings = $this->defaultConfig->get('mappings');
     $mapping = $mappings['touristsecrets'];
-
     $mappedData = [];
 
     foreach ($mapping as $key => $value) {
@@ -146,7 +152,7 @@ class DataMigrationController{
   }
 
   /**
-   * Gets url from config file data_migration.settings.yml
+   * Gets url and default values from config file data_migration.settings.yml
    * @return array
    */
   private function getUrls(): array {
@@ -154,5 +160,17 @@ class DataMigrationController{
       'posts_url' => $this->defaultConfig->get('posts_url'),
       'uid' => $this->defaultConfig->get('default_uid')
     ];
+  }
+
+  /***
+   * Allow access if token from URL is valid
+   * @return AccessResult
+   */
+  public function checkValidToken(string $token) : AccessResult {
+
+    $key = \Drupal::state()->get('system.cron_key');
+    $validToken = $key === $token;
+
+    return AccessResult::allowedIf($validToken);
   }
 }

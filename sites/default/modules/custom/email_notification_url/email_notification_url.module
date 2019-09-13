@@ -1,0 +1,55 @@
+<?php
+/***
+ * Modifying email message and insert the link of the current article edit/view
+ * page to the email message.
+ * @param $message
+ */
+
+function email_notification_url_mail_alter(&$message)
+{
+  if ($message['id'] == 'content_moderation_notifications_content_moderation_notification') {
+    /***
+     * Getting the current url
+     */
+    $current_uri = \Drupal::request()->getRequestUri();
+
+    /***
+     * Putting the value of the body inside $messageTest
+     */
+    $messageTest = $message['body'][0];
+
+    /***
+     * Modifying the body of email message
+     */
+    $subject1 = 'CMS Portal - Content has been Published';
+    $subject2 = 'CMS Portal - Content has been Archived';
+    $a_tag1 = '<a href=' . $_SESSION['published'] . '>Click here to view your article.</a>';
+    $a_tag2 = '<a href=' . $current_uri . '>Click here to view your article.</a>';
+
+    if ($message['subject'] == $subject1 || $message['subject'] == $subject2) {
+      $messageTest = str_replace("[viewurl]", $a_tag1, $messageTest);
+      $message['body'][0] = $messageTest;
+      unset ($_SESSION['published']);
+    } else {
+      $messageTest = str_replace("[viewurl]", $a_tag2, $messageTest);
+      $message['body'][0] = $messageTest;
+    }
+  }
+}
+
+
+/***
+ * Getting the default_value of the alias.
+ * @param $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ * @param $form_id
+ */
+function email_notification_url_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
+{
+  if ($form['path']['widget']['0']['alias']['#default_value']) {
+    $alias = $form['path']['widget']['0']['alias']['#default_value'];
+    $_SESSION['published'] = $alias;
+  }
+}
+
+

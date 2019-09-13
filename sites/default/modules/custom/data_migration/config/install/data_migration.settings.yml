@@ -10,5 +10,5 @@ mappings:
     post_title: 'title'
     post_status: 'status'
     guid: 'url'
-    vid: 'ID'
+    ID: 'vid'
     meta: 'meta'

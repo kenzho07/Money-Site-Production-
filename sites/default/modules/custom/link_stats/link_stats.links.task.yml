@@ -1,0 +1,5 @@
+link_stats.content:
+  route_name: link_stats.content
+  title: 'Links Stats'
+  base_route: entity.node.canonical
+  weight: 100
